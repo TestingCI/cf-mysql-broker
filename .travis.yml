@@ -1,4 +1,6 @@
 language: ruby
+
+
 bundler_args: --deployment --without development
 
 rvm:
@@ -30,3 +32,4 @@ before_script:
 - mysql -u root -e "SHOW VARIABLES;"
 - bundle exec rake db:create
 - bundle exec rake db:test:prepare
+
