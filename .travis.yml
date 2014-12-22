@@ -2,7 +2,8 @@ language: ruby
 
 
 bundler_args: --deployment --without development
-
+env:
+ - secure: lH4jCCMo9hf6XWM5rDn6aA+td5aw+qelZUbu/1eQI21h4cOPYURAOQOoVW/zLzehMZ5UP8nxWEqTCuVL3syoLAqHhsVRe26Q2eRB2BJPlirdiwjfDhS3Ae1WRD2Po0VXGlTDaIyFgrB4riCOopSa+QglfKoY1jWYI96uaK1YJVfGKja16TFNqHMF8P8Rop3IB5zUYrQyFqt361MBlYV7NW9eEY5tSqXKtfUWM4Xv5SLmirz51rdPxzh0+Mqw43iVvuR6t+33bh0pSpUbpn1CFd6QH/6GduiDApaCsLPWtQkrvhWxZ3Nl7cO6juDglaNTriC5TSJDR8IZgVG+di9yjg==
 rvm:
 - 2.0.0
 script: bundle exec rspec spec
@@ -14,6 +15,7 @@ before_script:
 # We have modified this to leave the 5.5 client intact because the mysql2 gem has
 # already been installed at this point, compiled against the 5.5 library.
 # uninstall MySQL 5.5
+- echo $prod1 and $prod2
 - sudo apt-get remove mysql-server-5.5 mysql-server-core-5.5
 - sudo apt-get autoremove
 # install MySQL 5.6
