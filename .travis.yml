@@ -1,13 +1,17 @@
 language: ruby
 
-#build_image: shippable/minv2:beta
+build_image: shippable/minv2:beta
 
 bundler_args: --deployment --without development
 env:
  - secure: lH4jCCMo9hf6XWM5rDn6aA+td5aw+qelZUbu/1eQI21h4cOPYURAOQOoVW/zLzehMZ5UP8nxWEqTCuVL3syoLAqHhsVRe26Q2eRB2BJPlirdiwjfDhS3Ae1WRD2Po0VXGlTDaIyFgrB4riCOopSa+QglfKoY1jWYI96uaK1YJVfGKja16TFNqHMF8P8Rop3IB5zUYrQyFqt361MBlYV7NW9eEY5tSqXKtfUWM4Xv5SLmirz51rdPxzh0+Mqw43iVvuR6t+33bh0pSpUbpn1CFd6QH/6GduiDApaCsLPWtQkrvhWxZ3Nl7cO6juDglaNTriC5TSJDR8IZgVG+di9yjg==
 rvm:
-- 2.0.0
+ - 2.0.0
 script: bundle exec rspec spec
+
+before_install:
+ - source ~/.rvm/scripts/rvm && rvm use 2.0.0
+
 
 before_script:
 # Travis says that the way to get MySQL 5.6 is to install it yourself with this gist:
