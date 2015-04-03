@@ -5,6 +5,7 @@ language: ruby
 bundler_args: --deployment --without development
 env:
  - secure: lH4jCCMo9hf6XWM5rDn6aA+td5aw+qelZUbu/1eQI21h4cOPYURAOQOoVW/zLzehMZ5UP8nxWEqTCuVL3syoLAqHhsVRe26Q2eRB2BJPlirdiwjfDhS3Ae1WRD2Po0VXGlTDaIyFgrB4riCOopSa+QglfKoY1jWYI96uaK1YJVfGKja16TFNqHMF8P8Rop3IB5zUYrQyFqt361MBlYV7NW9eEY5tSqXKtfUWM4Xv5SLmirz51rdPxzh0+Mqw43iVvuR6t+33bh0pSpUbpn1CFd6QH/6GduiDApaCsLPWtQkrvhWxZ3Nl7cO6juDglaNTriC5TSJDR8IZgVG+di9yjg==
+
 rvm:
  - 2.0.0
 
@@ -42,3 +43,4 @@ before_script:
 - bundle exec rake db:create
 - bundle exec rake db:test:prepare
 
+archive: true
